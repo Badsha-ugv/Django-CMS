@@ -1,0 +1,23 @@
+
+
+#total_order {
+    background: pink;
+    
+}
+
+
+
+.status .card-body  h3 {
+    font-size: 40px !important;
+    font-weight: 600;
+    text-shadow: black 2px -2px;
+    color: cornflowerblue;
+}
+
+#delivered-order {
+    background: lightgreen;
+}
+
+#pending_order {
+    background: #e17d7d;
+}

@@ -1,0 +1,29 @@
+{% extends 'main.html' %} 
+{% block navbar %} 
+{% include 'nav.html' %} 
+{% endblock %} 
+
+{% block content %} 
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card mt-2">
+            <div class="cr-body ">
+                <a href="{% url 'home' %}" class="btn btn-warning w-100"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                
+                <img class="w-100 rounded-circle" src="{{ request.user.customer.profile_pic.url }}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="card card-body mt-2">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="" class="btn btn-info" value="Submit" id="">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

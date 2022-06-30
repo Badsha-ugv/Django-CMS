@@ -1,0 +1,32 @@
+{% extends 'main.html' %} 
+{% block navbar %} 
+{% include 'nav.html' %} 
+{% endblock %} 
+
+{% block content %} 
+
+    
+
+        <div class="row text-center mt-3">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+
+                        <p>Do you want to Delete "{{ order.Product.name }}"?</p>
+                    
+                        <form action="{% url 'delete-order' order.id %}" method="POST">
+                            {% csrf_token %} 
+                            <a href="{% url 'home' %}" class="btn btn-info">Cancel</a>
+                            <input type="submit" value="Confirm" class="btn btn-outline-danger">
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+
+   
+
+{% endblock %} 
